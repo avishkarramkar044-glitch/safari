@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildlife Safari Explorer</title>
+<meta name="description" content="Meet Africa's wildlife, pick a park and plan your safari.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top">Safari Explorer</a>
+  <nav>
+    <a href="#animals">Animals</a>
+    <a href="#parks">Parks</a>
+    <a href="#plan">Plan a trip</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="hero-copy">
+      <h1>Golden hour<br>on the savanna</h1>
+      <p>Meet the animals, find the right park and plan the trip. Move your mouse over the scene to look around.</p>
+      <a class="btn" href="#animals">Meet the animals</a>
+    </div>
+    <svg class="scene" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#7A2E5A"/><stop offset=".5" stop-color="#FF6B35"/><stop offset="1" stop-color="#FFD166"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="560" fill="url(#sky)"/>
+      <g class="layer" data-depth="10"><circle cx="820" cy="330" r="120" fill="#FFE9A8"/></g>
+      <g class="layer" data-depth="20" fill="#5A2349"><path d="M0 400 Q150 330 300 390 T600 380 T900 390 T1200 370 V560 H0Z"/></g>
+      <g class="layer" data-depth="35" fill="#2B1B3A">
+        <rect x="170" y="300" width="10" height="130"/><path d="M80 300 Q175 240 270 300 Q175 280 80 300Z"/>
+        <rect x="960" y="320" width="9" height="110"/><path d="M880 322 Q965 270 1050 322 Q965 302 880 322Z"/>
+        <g class="elephant"><path d="M470 440 v-70 q0 -40 50 -45 q55 -5 75 25 q20 -5 25 20 v70 h-18 v-45 h-22 v45 h-18 v-30 h-48 v30 h-18 v-30 h-20 v30Z"/><path d="M470 375 q-35 5 -30 50 q3 10 12 5 q-5 -30 20 -42Z"/></g>
+        <g><path d="M700 440 l8 -80 l-12 -40 h14 l22 20 l14 -40 l10 6 l-6 40 l20 30 v64 h-12 v-50 h-30 v50 h-12 v-50 h-4 v50Z"/></g>
+      </g>
+      <g class="layer" data-depth="55" fill="#140C1F"><path d="M0 500 Q200 450 400 495 T800 490 T1200 480 V560 H0Z"/>
+        <path d="M60 500 l4 -40 l4 40Z M90 505 l3 -30 l3 30Z M1100 495 l4 -45 l4 45Z"/></g>
+    </svg>
+  </section>
+
+  <section class="section" id="animals">
+    <h2>Who will you meet?</h2>
+    <p class="lead">Pick a habitat, then tap an animal to read its field notes.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter animals by habitat"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="section alt" id="parks">
+    <h2>Where to go</h2>
+    <p class="lead">Four parks, four very different safaris.</p>
+    <div class="parks" id="parks-list"></div>
+  </section>
+
+  <section class="section" id="plan">
+    <h2>Plan your safari</h2>
+    <p class="lead">Choose a park and the number of days to get a quick estimate.</p>
+    <div class="planner">
+      <label>Park
+        <select id="park"></select>
+      </label>
+      <label>Days: <output id="daysOut">5</output>
+        <input type="range" id="days" min="2" max="14" value="5">
+      </label>
+      <label>Travellers: <output id="pplOut">2</output>
+        <input type="range" id="ppl" min="1" max="8" value="2">
+      </label>
+      <div class="result" aria-live="polite">
+        <span>Estimated cost</span>
+        <strong id="cost">$0</strong>
+        <small id="tip"></small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Wildlife Safari Explorer. Keep your distance, never feed wildlife and leave only footprints.</p>
+</footer>
+
+<dialog id="modal">
+  <button class="close" id="close" aria-label="Close">×</button>
+  <div class="m-emoji" id="mEmoji"></div>
+  <h3 id="mName"></h3>
+  <p id="mText"></p>
+  <ul id="mFacts"></ul>
+</dialog>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
